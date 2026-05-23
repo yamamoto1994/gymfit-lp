@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>マシンピラティス GYMFIT 江戸川橋</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #fff; }
+
+img { width: 100%; height: auto; display: block; }
+
+.pc-only { display: block; }
+.sp-only { display: none; }
+
+@media (max-width: 768px) {
+  .pc-only { display: none; }
+  .sp-only { display: block; }
+}
+
+.img-wrap { position: relative; }
+
+.btn-overlay {
+  position: absolute;
+  cursor: pointer;
+}
+
+/* ===== Flow ===== */
+.flow {
+  background: #D8F3DC;
+  padding: 80px 40px;
+}
+.flow-inner {
+  max-width: 960px;
+  margin: 0 auto;
+}
+.flow-label {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: #F4845F;
+  font-weight: 500;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-family: sans-serif;
+}
+.flow-label::before {
+  content: '';
+  display: inline-block;
+  width: 26px;
+  height: 1px;
+  background: #F4845F;
+}
+.flow-title {
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 300;
+  color: #2D6A4F;
+  margin-bottom: 8px;
+  font-family: 'Hiragino Mincho ProN', 'Yu Mincho', Georgia, serif;
+}
+.flow-desc {
+  font-size: 13px;
+  color: #3D5A47;
+  margin-bottom: 52px;
+  line-height: 1.9;
+  font-family: sans-serif;
+}
+.flow-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  position: relative;
+  gap: 0;
+}
+.flow-steps::before {
+  content: '';
+  position: absolute;
+  top: 32px;
+  left: calc(12.5% + 6px);
+  right: calc(12.5% + 6px);
+  height: 2px;
+  background: linear-gradient(90deg, #52B788, #F4845F);
+}
+.flow-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 12px;
+  position: relative;
+  font-family: sans-serif;
+}
+.flow-num {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 16px;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+  font-family: Georgia, serif;
+}
+.flow-step:nth-child(1) .flow-num { background: #2D6A4F; }
+.flow-step:nth-child(2) .flow-num { background: #52B788; }
+.flow-step:nth-child(3) .flow-num { background: #F9A87A; }
+.flow-step:nth-child(4) .flow-num { background: #F4845F; }
+.flow-icon { font-size: 20px; margin-bottom: 8px; }
+.flow-step-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #2D6A4F;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+.flow-step-desc {
+  font-size: 12px;
+  color: #3D5A47;
+  line-height: 1.85;
+}
+.flow-time {
+  display: inline-block;
+  margin-top: 10px;
+  background: #fff;
+  color: #F4845F;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 12px;
+  border-radius: 50px;
+}
+.flow-notes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 40px;
+}
+.flow-note-item {
+  background: #fff;
+  border: 1.5px solid #95D5B2;
+  color: #2D6A4F;
+  font-size: 12px;
+  padding: 6px 18px;
+  border-radius: 50px;
+  font-family: sans-serif;
+}
+
+@media (max-width: 768px) {
+  .flow { padding: 60px 20px; }
+  .flow-steps {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+  .flow-steps::before { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- Hero (fv) -->
+<div class="img-wrap">
+  <img class="pc-only" src="img/fv.png" alt="">
+  <img class="sp-only" src="img/fv-sp.png" alt="">
+  <!-- PC: LINE button -->
+  <a class="btn-overlay pc-only" href="https://line.me/R/ti/p/@221hsqmf" target="_blank" rel="noopener"
+    style="left:4.75%;top:78.4%;width:20.4%;height:6.5%;"></a>
+  <!-- PC: オンライン予約 -->
+  <a class="btn-overlay pc-only" href="#contact"
+    style="left:26.6%;top:78.4%;width:16.4%;height:6.5%;"></a>
+  <!-- PC: 体験レッスン（右上） -->
+  <a class="btn-overlay pc-only" href="#"
+    style="left:76.6%;top:2.5%;width:14.5%;height:6%;"></a>
+  <!-- SP: ヘッダーボタン（お問い合わせへ） -->
+  <a class="btn-overlay sp-only" href="#contact"
+    style="left:59.4%;top:2.3%;width:32.2%;height:4.8%;"></a>
+  <!-- SP: LINE button -->
+  <a class="btn-overlay sp-only" href="https://line.me/R/ti/p/@221hsqmf" target="_blank" rel="noopener"
+    style="left:6.2%;top:72.1%;width:36.2%;height:5.6%;"></a>
+  <!-- SP: オンライン予約 -->
+  <a class="btn-overlay sp-only" href="#contact"
+    style="left:6.2%;top:81.2%;width:35.8%;height:7.6%;"></a>
+</div>
+
+<!-- Target -->
+<div class="img-wrap">
+  <img class="pc-only" src="img/target.png" alt="">
+  <img class="sp-only" src="img/target-sp.png" alt="">
+</div>
+
+<!-- Voice -->
+<div class="img-wrap">
+  <img class="pc-only" src="img/voice.png" alt="">
+  <img class="sp-only" src="img/voice-sp.png" alt="">
+</div>
+
+<!-- Instructors -->
+<div class="img-wrap">
+  <img class="pc-only" src="img/instructors.png" alt="">
+  <img class="sp-only" src="img/instructors-sp.png" alt="">
+</div>
+
+<!-- About Us -->
+<div class="img-wrap">
+  <img class="pc-only" src="img/aboutus.png" alt="">
+  <img class="sp-only" src="img/aboutus-sp.png" alt="">
+</div>
+
+<!-- Studio -->
+<div class="img-wrap">
+  <img class="pc-only" src="img/studio.png" alt="">
+  <img class="sp-only" src="img/studio-sp.png" alt="">
+  <!-- PC: LINE button -->
+  <a class="btn-overlay pc-only" href="https://line.me/R/ti/p/@221hsqmf" target="_blank" rel="noopener"
+    style="left:29.2%;top:89.2%;width:41.5%;height:7.6%;"></a>
+</div>
+
+<!-- Flow -->
+<div class="img-wrap">
+  <img class="pc-only" src="img/flow.png" alt="">
+  <img class="sp-only" src="img/flow-sp.png" alt="">
+</div>
+
+<!-- Price -->
+<div class="img-wrap">
+  <img class="pc-only" src="img/price.png" alt="">
+  <img class="sp-only" src="img/price-sp.png" alt="">
+  <!-- PC: LINE button -->
+  <a class="btn-overlay pc-only" href="https://line.me/R/ti/p/@221hsqmf" target="_blank" rel="noopener"
+    style="left:59.4%;top:32.4%;width:34.3%;height:6.3%;"></a>
+</div>
+
+<!-- FAQ -->
+<div class="img-wrap">
+  <img class="pc-only" src="img/faq.png" alt="">
+  <img class="sp-only" src="img/faq-sp.png" alt="">
+</div>
+
+<!-- Access -->
+<div class="img-wrap">
+  <img class="pc-only" src="img/access.png" alt="">
+  <img class="sp-only" src="img/access-sp.png" alt="">
+  <!-- PC: Google マップで開く ボタン -->
+  <a class="btn-overlay pc-only" href="https://maps.google.com/?q=東京都新宿区早稲田鶴巻町573-5" target="_blank" rel="noopener"
+    style="left:4.2%;top:68.7%;width:17.9%;height:5.1%;"></a>
+  <!-- PC: 埋め込み地図 -->
+  <iframe class="pc-only" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.6987940494864!2d139.7272534!3d35.709029099999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188d80f749ffe3%3A0xe30a5db7908faeb2!2z44OQ44Kv6Lui44Ki44Kv44Ot44OQ44OD44OI5pWZ5a6kIOODkOOCr-ODiOODrCDmlrDlrr_msZ_miLjlt53mqYvlupc!5e0!3m2!1sja!2sjp!4v1779565697100!5m2!1sja!2sjp"
+    style="position:absolute;left:41.7%;top:15.6%;width:46.8%;height:46.8%;border:0;"
+    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <!-- SP: 埋め込み地図 -->
+  <iframe class="sp-only" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.6987940494864!2d139.7272534!3d35.709029099999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188d80f749ffe3%3A0xe30a5db7908faeb2!2z44OQ44Kv6Lui44Ki44Kv44Ot44OQ44OD44OI5pWZ5a6kIOODkOOCr-ODiOODrCDmlrDlrr_msZ_miLjlt53mqYvlupc!5e0!3m2!1sja!2sjp!4v1779565697100!5m2!1sja!2sjp"
+    style="position:absolute;left:4.3%;top:42.1%;width:91.2%;height:13.2%;border:0;"
+    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+<!-- Contact Form -->
+<section id="contact" style="background:#F5F0E8;padding:80px 24px;">
+  <div style="max-width:600px;margin:0 auto;">
+    <p style="font-size:11px;letter-spacing:0.2em;color:#F4845F;font-weight:500;text-transform:uppercase;display:flex;align-items:center;gap:10px;margin-bottom:12px;font-family:sans-serif;">
+      <span style="display:inline-block;width:26px;height:1px;background:#F4845F;"></span>Contact
+    </p>
+    <h2 style="font-size:clamp(22px,3vw,32px);font-weight:300;color:#2D6A4F;margin-bottom:8px;font-family:'Hiragino Mincho ProN','Yu Mincho',Georgia,serif;">お問い合わせ</h2>
+    <p style="font-size:13px;color:#3D5A47;margin-bottom:36px;line-height:1.9;font-family:sans-serif;">ご質問・ご相談はお気軽にどうぞ。<br>通常1〜2営業日以内にご返信いたします。</p>
+    <form id="contact-form" style="display:flex;flex-direction:column;gap:16px;font-family:sans-serif;">
+      <div style="display:flex;flex-direction:column;gap:6px;">
+        <label style="font-size:12px;font-weight:500;color:#2D6A4F;">お名前 <span style="color:#F4845F;">*</span></label>
+        <input type="text" name="name" required placeholder="例：山田 花子"
+          style="padding:12px 16px;border:1.5px solid #95D5B2;border-radius:8px;font-size:14px;outline:none;background:#fff;font-family:sans-serif;">
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px;">
+        <label style="font-size:12px;font-weight:500;color:#2D6A4F;">メールアドレス <span style="color:#F4845F;">*</span></label>
+        <input type="email" name="email" required placeholder="例：example@email.com"
+          style="padding:12px 16px;border:1.5px solid #95D5B2;border-radius:8px;font-size:14px;outline:none;background:#fff;font-family:sans-serif;">
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px;">
+        <label style="font-size:12px;font-weight:500;color:#2D6A4F;">電話番号</label>
+        <input type="tel" name="phone" placeholder="例：090-0000-0000"
+          style="padding:12px 16px;border:1.5px solid #95D5B2;border-radius:8px;font-size:14px;outline:none;background:#fff;font-family:sans-serif;">
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px;">
+        <label style="font-size:12px;font-weight:500;color:#2D6A4F;">レッスン希望日① <span style="color:#F4845F;">*</span></label>
+        <div style="display:flex;gap:8px;">
+          <input type="date" name="date1" id="date1" required
+            style="flex:1;padding:12px 16px;border:1.5px solid #95D5B2;border-radius:8px;font-size:14px;outline:none;background:#fff;font-family:sans-serif;">
+          <select name="time1" id="time1" required
+            style="padding:12px 12px;border:1.5px solid #95D5B2;border-radius:8px;font-size:14px;outline:none;background:#fff;font-family:sans-serif;cursor:pointer;"></select>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px;">
+        <label style="font-size:12px;font-weight:500;color:#2D6A4F;">レッスン希望日② <span style="color:#F4845F;">*</span></label>
+        <div style="display:flex;gap:8px;">
+          <input type="date" name="date2" id="date2" required
+            style="flex:1;padding:12px 16px;border:1.5px solid #95D5B2;border-radius:8px;font-size:14px;outline:none;background:#fff;font-family:sans-serif;">
+          <select name="time2" id="time2" required
+            style="padding:12px 12px;border:1.5px solid #95D5B2;border-radius:8px;font-size:14px;outline:none;background:#fff;font-family:sans-serif;cursor:pointer;"></select>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px;">
+        <label style="font-size:12px;font-weight:500;color:#2D6A4F;">レッスン希望日③ <span style="color:#7A9E8A;font-weight:400;">（任意）</span></label>
+        <div style="display:flex;gap:8px;">
+          <input type="date" name="date3" id="date3"
+            style="flex:1;padding:12px 16px;border:1.5px solid #95D5B2;border-radius:8px;font-size:14px;outline:none;background:#fff;font-family:sans-serif;">
+          <select name="time3" id="time3"
+            style="padding:12px 12px;border:1.5px solid #95D5B2;border-radius:8px;font-size:14px;outline:none;background:#fff;font-family:sans-serif;cursor:pointer;"></select>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px;">
+        <label style="font-size:12px;font-weight:500;color:#2D6A4F;">お問い合わせ内容 <span style="color:#7A9E8A;font-weight:400;">（任意）</span></label>
+        <textarea name="message" rows="4" placeholder="ご質問・ご要望などがあればお書きください。"
+          style="padding:12px 16px;border:1.5px solid #95D5B2;border-radius:8px;font-size:14px;outline:none;background:#fff;font-family:sans-serif;resize:vertical;"></textarea>
+      </div>
+      <button type="submit" id="submit-btn"
+        style="background:#2D6A4F;color:#fff;font-size:15px;font-weight:600;padding:16px;border:none;border-radius:8px;cursor:pointer;letter-spacing:0.05em;font-family:sans-serif;transition:opacity 0.2s;"
+        onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
+        送信する
+      </button>
+    </form>
+  </div>
+</section>
+
+<script>
+// 時間セレクトを30分刻みで生成（9:00〜21:30）、初期値 10:00
+(function() {
+  const tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  const yyyy = tomorrow.getFullYear();
+  const mm   = String(tomorrow.getMonth() + 1).padStart(2, '0');
+  const dd   = String(tomorrow.getDate()).padStart(2, '0');
+  const tomorrowStr = `${yyyy}-${mm}-${dd}`;
+
+  const timeOptions = [];
+  for (let h = 9; h <= 21; h++) {
+    for (let m of [0, 30]) {
+      if (h === 21 && m === 30) break;
+      timeOptions.push(`${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}〜`);
+    }
+  }
+
+  [1, 2, 3].forEach(function(n) {
+    const dateEl = document.getElementById('date' + n);
+    const timeEl = document.getElementById('time' + n);
+    dateEl.value = tomorrowStr;
+    timeOptions.forEach(function(t) {
+      const opt = document.createElement('option');
+      opt.value = t;
+      opt.textContent = t;
+      if (t === '10:00〜') opt.selected = true;
+      timeEl.appendChild(opt);
+    });
+  });
+})();
+
+document.getElementById('contact-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+
+  const btn = document.getElementById('submit-btn');
+  btn.disabled = true;
+  btn.textContent = '送信中...';
+
+  const fd = new FormData(this);
+
+  function dateTime(n) {
+    const d = fd.get('date' + n);
+    const t = fd.get('time' + n);
+    return d ? d + ' ' + t : null;
+  }
+
+  const f = {
+    name:    fd.get('name'),
+    email:   fd.get('email'),
+    phone:   fd.get('phone')   || '未入力',
+    date1:   dateTime(1),
+    date2:   dateTime(2),
+    date3:   dateTime(3) || '未入力',
+    message: fd.get('message') || '未入力',
+  };
+
+  // Chatwork通知（サーバー経由）
+  const cwBody = [
+    '[info][title]GYMFITにお問い合わせがありました[/title]',
+    'お名前：'           + f.name,
+    'メール：'           + f.email,
+    '電話：'             + f.phone,
+    '希望日①：'         + f.date1,
+    '希望日②：'         + f.date2,
+    '希望日③：'         + f.date3,
+    'お問い合わせ内容：' + f.message,
+    '[/info]',
+  ].join('\n');
+
+  try {
+    await fetch('/notify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ body: cwBody }),
+    });
+  } catch (_) {}
+
+  // FormSubmit経由でメール送信
+  fd.append('_subject', 'GYMFITへのお問い合わせ');
+  fd.append('_captcha', 'false');
+  try {
+    await fetch('https://formsubmit.co/gymfit.zaitou@gmail.com', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: fd,
+    });
+    window.location.href = 'thanks.html';
+  } catch (_) {
+    btn.disabled = false;
+    btn.textContent = '送信する';
+    alert('送信に失敗しました。お電話またはLINEにてお問い合わせください。');
+  }
+});
+</script>
+
+</body>
+</html>
