@@ -4,11 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>マシンピラティス GYMFIT 江戸川橋</title>
+<link rel="preload" as="image" href="img/webp/fv.webp" media="(min-width: 769px)" type="image/webp">
+<link rel="preload" as="image" href="img/webp/fv-sp.webp" media="(max-width: 768px)" type="image/webp">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { background: #fff; }
 
 img { width: 100%; height: auto; display: block; }
+picture { display: block; }
 
 .pc-only { display: block; }
 .sp-only { display: none; }
@@ -165,8 +168,14 @@ img { width: 100%; height: auto; display: block; }
 
 <!-- Hero (fv) -->
 <div class="img-wrap">
-  <img class="pc-only" src="img/fv.png" alt="">
-  <img class="sp-only" src="img/fv-sp.png" alt="">
+  <picture class="pc-only">
+    <source srcset="img/webp/fv.webp" type="image/webp">
+    <img src="img/fv.png" alt="" fetchpriority="high">
+  </picture>
+  <picture class="sp-only">
+    <source srcset="img/webp/fv-sp.webp" type="image/webp">
+    <img src="img/fv-sp.png" alt="" fetchpriority="high">
+  </picture>
   <!-- PC: LINE button -->
   <a class="btn-overlay pc-only" href="https://line.me/R/ti/p/@221hsqmf" target="_blank" rel="noopener"
     style="left:4.75%;top:78.4%;width:20.4%;height:6.5%;"></a>
@@ -189,32 +198,62 @@ img { width: 100%; height: auto; display: block; }
 
 <!-- Target -->
 <div class="img-wrap">
-  <img class="pc-only" src="img/target.png" alt="">
-  <img class="sp-only" src="img/target-sp.png" alt="">
+  <picture class="pc-only">
+    <source srcset="img/webp/target.webp" type="image/webp">
+    <img src="img/target.png" alt="" loading="lazy">
+  </picture>
+  <picture class="sp-only">
+    <source srcset="img/webp/target-sp.webp" type="image/webp">
+    <img src="img/target-sp.png" alt="" loading="lazy">
+  </picture>
 </div>
 
 <!-- Voice -->
 <div class="img-wrap">
-  <img class="pc-only" src="img/voice.png" alt="">
-  <img class="sp-only" src="img/voice-sp.png" alt="">
+  <picture class="pc-only">
+    <source srcset="img/webp/voice.webp" type="image/webp">
+    <img src="img/voice.png" alt="" loading="lazy">
+  </picture>
+  <picture class="sp-only">
+    <source srcset="img/webp/voice-sp.webp" type="image/webp">
+    <img src="img/voice-sp.png" alt="" loading="lazy">
+  </picture>
 </div>
 
 <!-- Instructors -->
 <div class="img-wrap">
-  <img class="pc-only" src="img/instructors.png" alt="">
-  <img class="sp-only" src="img/instructors-sp.png" alt="">
+  <picture class="pc-only">
+    <source srcset="img/webp/instructors.webp" type="image/webp">
+    <img src="img/instructors.png" alt="" loading="lazy">
+  </picture>
+  <picture class="sp-only">
+    <source srcset="img/webp/instructors-sp.webp" type="image/webp">
+    <img src="img/instructors-sp.png" alt="" loading="lazy">
+  </picture>
 </div>
 
 <!-- About Us -->
 <div class="img-wrap">
-  <img class="pc-only" src="img/aboutus.png" alt="">
-  <img class="sp-only" src="img/aboutus-sp.png" alt="">
+  <picture class="pc-only">
+    <source srcset="img/webp/aboutus.webp" type="image/webp">
+    <img src="img/aboutus.png" alt="" loading="lazy">
+  </picture>
+  <picture class="sp-only">
+    <source srcset="img/webp/aboutus-sp.webp" type="image/webp">
+    <img src="img/aboutus-sp.png" alt="" loading="lazy">
+  </picture>
 </div>
 
 <!-- Studio -->
 <div class="img-wrap">
-  <img class="pc-only" src="img/studio.png" alt="">
-  <img class="sp-only" src="img/studio-sp.png" alt="">
+  <picture class="pc-only">
+    <source srcset="img/webp/studio.webp" type="image/webp">
+    <img src="img/studio.png" alt="" loading="lazy">
+  </picture>
+  <picture class="sp-only">
+    <source srcset="img/webp/studio-sp.webp" type="image/webp">
+    <img src="img/studio-sp.png" alt="" loading="lazy">
+  </picture>
   <!-- PC: LINE button -->
   <a class="btn-overlay pc-only" href="https://line.me/R/ti/p/@221hsqmf" target="_blank" rel="noopener"
     style="left:29.2%;top:89.2%;width:41.5%;height:7.6%;"></a>
@@ -222,14 +261,26 @@ img { width: 100%; height: auto; display: block; }
 
 <!-- Flow -->
 <div class="img-wrap">
-  <img class="pc-only" src="img/flow.png" alt="">
-  <img class="sp-only" src="img/flow-sp.png" alt="">
+  <picture class="pc-only">
+    <source srcset="img/webp/flow.webp" type="image/webp">
+    <img src="img/flow.png" alt="" loading="lazy">
+  </picture>
+  <picture class="sp-only">
+    <source srcset="img/webp/flow-sp.webp" type="image/webp">
+    <img src="img/flow-sp.png" alt="" loading="lazy">
+  </picture>
 </div>
 
 <!-- Price -->
 <div class="img-wrap">
-  <img class="pc-only" src="img/price.png" alt="">
-  <img class="sp-only" src="img/price-sp.png" alt="">
+  <picture class="pc-only">
+    <source srcset="img/webp/price.webp" type="image/webp">
+    <img src="img/price.png" alt="" loading="lazy">
+  </picture>
+  <picture class="sp-only">
+    <source srcset="img/webp/price-sp.webp" type="image/webp">
+    <img src="img/price-sp.png" alt="" loading="lazy">
+  </picture>
   <!-- PC: LINE button -->
   <a class="btn-overlay pc-only" href="https://line.me/R/ti/p/@221hsqmf" target="_blank" rel="noopener"
     style="left:59.4%;top:32.4%;width:34.3%;height:6.3%;"></a>
@@ -237,14 +288,26 @@ img { width: 100%; height: auto; display: block; }
 
 <!-- FAQ -->
 <div class="img-wrap">
-  <img class="pc-only" src="img/faq.png" alt="">
-  <img class="sp-only" src="img/faq-sp.png" alt="">
+  <picture class="pc-only">
+    <source srcset="img/webp/faq.webp" type="image/webp">
+    <img src="img/faq.png" alt="" loading="lazy">
+  </picture>
+  <picture class="sp-only">
+    <source srcset="img/webp/faq-sp.webp" type="image/webp">
+    <img src="img/faq-sp.png" alt="" loading="lazy">
+  </picture>
 </div>
 
 <!-- Access -->
 <div class="img-wrap">
-  <img class="pc-only" src="img/access.png" alt="">
-  <img class="sp-only" src="img/access-sp.png" alt="">
+  <picture class="pc-only">
+    <source srcset="img/webp/access.webp" type="image/webp">
+    <img src="img/access.png" alt="" loading="lazy">
+  </picture>
+  <picture class="sp-only">
+    <source srcset="img/webp/access-sp.webp" type="image/webp">
+    <img src="img/access-sp.png" alt="" loading="lazy">
+  </picture>
   <!-- PC: Google マップで開く ボタン -->
   <a class="btn-overlay pc-only" href="https://maps.google.com/?q=東京都新宿区早稲田鶴巻町573-5" target="_blank" rel="noopener"
     style="left:4.2%;top:68.7%;width:17.9%;height:5.1%;"></a>
