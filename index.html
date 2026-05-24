@@ -10,7 +10,7 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { background: #fff; }
 
-img { width: 100%; height: auto; display: block; }
+img { width: 100%; height: auto; display: block; pointer-events: none; }
 picture { display: block; }
 
 .pc-only { display: block; }
@@ -19,6 +19,8 @@ picture { display: block; }
 @media (max-width: 768px) {
   .pc-only { display: none; }
   .sp-only { display: block; }
+  /* iOS Safariのズーム防止（font-size 16px未満でズームが発生する） */
+  input, select, textarea { font-size: 16px !important; }
 }
 
 .img-wrap { position: relative; }
@@ -26,6 +28,7 @@ picture { display: block; }
 .btn-overlay {
   position: absolute;
   cursor: pointer;
+  z-index: 1;
 }
 
 /* ===== Flow ===== */
@@ -193,7 +196,7 @@ picture { display: block; }
     style="left:6.2%;top:72.1%;width:36.2%;height:5.6%;"></a>
   <!-- SP: オンライン予約 -->
   <a class="btn-overlay sp-only" href="#contact"
-    style="left:6.2%;top:81.2%;width:35.8%;height:7.6%;"></a>
+    style="left:5.5%;top:84.7%;width:35.5%;height:6.5%;"></a>
 </div>
 
 <!-- Target -->
