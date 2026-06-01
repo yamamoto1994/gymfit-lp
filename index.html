@@ -537,6 +537,11 @@ document.getElementById('contact-form').addEventListener('submit', async functio
       body: fd,
     });
     gtag('event', 'form_submit', {form_name: 'contact'});
+    fetch('/send-mail', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: f.name, email: f.email }),
+    }).catch(() => {});
     window.location.href = 'thanks.html';
   } catch (_) {
     btn.disabled = false;
