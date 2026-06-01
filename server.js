@@ -1,7 +1,6 @@
 const express = require('express');
 const https = require('https');
 const path = require('path');
-const nodemailer = require('nodemailer');
 
 const app = express();
 app.use(express.json());
@@ -57,35 +56,6 @@ app.post('/notify', (req, res) => {
 
   cwReq.write(postData);
   cwReq.end();
-});
-
-// 自動返信メール
-app.post('/send-mail', async (req, res) => {
-  const { name, email } = req.body;
-  if (!name || !email) return res.status(400).json({ ok: false });
-
-  const transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
-    port: 587,
-    secure: false,
-    auth: {
-      user: process.env.GMAIL_USER,
-      pass: process.env.GMAIL_PASS,
-    },
-  });
-
-  try {
-    await transporter.sendMail({
-      from: `"パーソナルピラティスGYMFIT" <${process.env.GMAIL_USER}>`,
-      to: email,
-      subject: '【パーソナルピラティスGYMFIT】お問い合わせを受け付けました',
-      text: `${name} 様\n\nこの度はパーソナルピラティスGYMFITへお問い合わせいただき、誠にありがとうございます。\n\n内容を確認のうえ、担当者よりご連絡いたします。\n今しばらくお待ちください。\n\n──────────────────\nパーソナルピラティスGYMFIT\nhttps://gymfit-lp-production.up.railway.app/\n──────────────────`,
-    });
-    res.json({ ok: true });
-  } catch (e) {
-    console.error('Mail error:', e.message);
-    res.status(500).json({ ok: false, error: e.message });
-  }
 });
 
 // LINE Webhook
