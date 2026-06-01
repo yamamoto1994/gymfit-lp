@@ -519,6 +519,7 @@ document.getElementById('contact-form').addEventListener('submit', async functio
     }).catch(() => {}),
     fetch(GAS_URL, {
       method: 'POST',
+      mode: 'no-cors',
       headers: { 'Content-Type': 'text/plain' },
       body: JSON.stringify(f),
     }).catch(() => {}),
