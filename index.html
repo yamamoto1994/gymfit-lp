@@ -191,9 +191,11 @@ picture { display: block; pointer-events: none; }
   </picture>
   <!-- PC: LINE button -->
   <a class="btn-overlay pc-only" href="https://lin.ee/55ZGd8P" target="_blank" rel="noopener"
+    onclick="gtag('event','click_line',{section:'fv',device:'pc'})"
     style="left:4.75%;top:78.4%;width:20.4%;height:6.5%;"></a>
   <!-- PC: オンライン予約 -->
   <a class="btn-overlay pc-only" href="#contact"
+    onclick="gtag('event','click_contact',{section:'fv',device:'pc'})"
     style="left:26.6%;top:78.4%;width:16.4%;height:6.5%;"></a>
   <!-- PC: ナビ — こんな方へ -->
   <a class="btn-overlay pc-only" href="#target"
@@ -212,15 +214,19 @@ picture { display: block; pointer-events: none; }
     style="left:73.4%;top:2.9%;width:3.7%;height:5.4%;"></a>
   <!-- PC: 体験レッスン（右上） -->
   <a class="btn-overlay pc-only" href="#contact"
+    onclick="gtag('event','click_contact',{section:'header',device:'pc'})"
     style="left:76.6%;top:2.5%;width:14.5%;height:6%;"></a>
   <!-- SP: ヘッダーボタン（お問い合わせへ） -->
   <a class="btn-overlay sp-only" href="#contact"
+    onclick="gtag('event','click_contact',{section:'header',device:'sp'})"
     style="left:56.3%;top:2.4%;width:40.2%;height:6.1%;"></a>
   <!-- SP: LINE button -->
   <a class="btn-overlay sp-only" href="https://lin.ee/55ZGd8P" target="_blank" rel="noopener"
+    onclick="gtag('event','click_line',{section:'fv',device:'sp'})"
     style="left:4.6%;top:81.6%;width:38.2%;height:4.1%;"></a>
   <!-- SP: オンライン予約 -->
   <a class="btn-overlay sp-only" href="#contact"
+    onclick="gtag('event','click_contact',{section:'fv',device:'sp'})"
     style="left:4.6%;top:86.6%;width:38.3%;height:4.3%;"></a>
 </div>
 
@@ -236,9 +242,11 @@ picture { display: block; pointer-events: none; }
   </picture>
   <!-- PC: CTAボタン -->
   <a class="btn-overlay pc-only" href="#contact"
+    onclick="gtag('event','click_contact',{section:'target',device:'pc'})"
     style="left:11.0%;top:80.3%;width:79.8%;height:3.9%;"></a>
   <!-- SP: CTAボタン -->
   <a class="btn-overlay sp-only" href="#contact"
+    onclick="gtag('event','click_contact',{section:'target',device:'sp'})"
     style="left:4.1%;top:93.5%;width:91.7%;height:6.5%;"></a>
 </div>
 
@@ -290,9 +298,11 @@ picture { display: block; pointer-events: none; }
   </picture>
   <!-- PC: LINE button -->
   <a class="btn-overlay pc-only" href="https://lin.ee/55ZGd8P" target="_blank" rel="noopener"
+    onclick="gtag('event','click_line',{section:'studio',device:'pc'})"
     style="left:29.2%;top:89.2%;width:41.5%;height:7.6%;"></a>
   <!-- SP: LINE button -->
   <a class="btn-overlay sp-only" href="https://lin.ee/55ZGd8P" target="_blank" rel="noopener"
+    onclick="gtag('event','click_line',{section:'studio',device:'sp'})"
     style="left:11.4%;top:94.8%;width:75.7%;height:4.6%;"></a>
 </div>
 
@@ -320,9 +330,11 @@ picture { display: block; pointer-events: none; }
   </picture>
   <!-- PC: LINE button -->
   <a class="btn-overlay pc-only" href="https://lin.ee/55ZGd8P" target="_blank" rel="noopener"
+    onclick="gtag('event','click_line',{section:'price',device:'pc'})"
     style="left:59.2%;top:49.7%;width:34.9%;height:6.5%;"></a>
   <!-- SP: LINE button -->
   <a class="btn-overlay sp-only" href="https://lin.ee/55ZGd8P" target="_blank" rel="noopener"
+    onclick="gtag('event','click_line',{section:'price',device:'sp'})"
     style="left:55.6%;top:42.3%;width:38.0%;height:6.3%;"></a>
 </div>
 
@@ -350,6 +362,7 @@ picture { display: block; pointer-events: none; }
   </picture>
   <!-- PC: Google マップで開く ボタン -->
   <a class="btn-overlay pc-only" href="https://maps.google.com/?q=東京都新宿区早稲田鶴巻町573-5" target="_blank" rel="noopener"
+    onclick="gtag('event','click_map',{device:'pc'})"
     style="left:4.2%;top:68.7%;width:17.9%;height:5.1%;"></a>
   <!-- PC: 埋め込み地図 -->
   <iframe class="pc-only" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.6987940494864!2d139.7272534!3d35.709029099999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188d80f749ffe3%3A0xe30a5db7908faeb2!2z44OQ44Kv6Lui44Ki44Kv44Ot44OQ44OD44OI5pWZ5a6kIOODkOOCr-ODiOODrCDmlrDlrr_msZ_miLjlt53mqYvlupc!5e0!3m2!1sja!2sjp!4v1779565697100!5m2!1sja!2sjp"
@@ -513,6 +526,7 @@ document.getElementById('contact-form').addEventListener('submit', async functio
       headers: { 'Accept': 'application/json' },
       body: fd,
     });
+    gtag('event', 'form_submit', {form_name: 'contact'});
     window.location.href = 'thanks.html';
   } catch (_) {
     btn.disabled = false;
