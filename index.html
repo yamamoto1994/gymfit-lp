@@ -498,7 +498,7 @@ document.getElementById('contact-form').addEventListener('submit', async functio
 
   // Chatwork通知（サーバー経由）
   const cwBody = [
-    '[info][title]GYMFITにお問い合わせがありました[/title]',
+    '[info][title]パーソナルピラティスGYMFITにお問い合わせがありました[/title]',
     'お名前：'           + f.name,
     'メール：'           + f.email,
     '電話：'             + f.phone,
@@ -520,6 +520,8 @@ document.getElementById('contact-form').addEventListener('submit', async functio
   // FormSubmit経由でメール送信
   fd.append('_subject', 'GYMFITへのお問い合わせ');
   fd.append('_captcha', 'false');
+  fd.append('_replyto', fd.get('email'));
+  fd.append('_autoresponse', `${fd.get('name')} 様\n\nこの度はパーソナルピラティスGYMFITへお問い合わせいただき、誠にありがとうございます。\n\n内容を確認のうえ、担当者よりご連絡いたします。\n今しばらくお待ちください。\n\n──────────────────\nパーソナルピラティスGYMFIT\nhttps://gymfit-lp-production.up.railway.app/\n──────────────────`);
   try {
     await fetch('https://formsubmit.co/gymfit.zaitou@gmail.com', {
       method: 'POST',
