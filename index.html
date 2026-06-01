@@ -509,13 +509,20 @@ document.getElementById('contact-form').addEventListener('submit', async functio
     '[/info]',
   ].join('\n');
 
-  try {
-    await fetch('/notify', {
+  const GAS_URL = 'https://script.google.com/macros/s/AKfycbzqQ3nPthJvTQAY2mWtXFPKLmpfyT4OhenycmzLUm9ra1H82kpXD1QnStqTgufErKEG/exec';
+
+  await Promise.all([
+    fetch('/notify', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ body: cwBody }),
-    });
-  } catch (_) {}
+    }).catch(() => {}),
+    fetch(GAS_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify(f),
+    }).catch(() => {}),
+  ]);
 
   // FormSubmit経由でメール送信
   fd.append('_subject', 'GYMFITへのお問い合わせ');
