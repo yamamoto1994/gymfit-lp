@@ -512,7 +512,7 @@ document.getElementById('contact-form').addEventListener('submit', async functio
   const GAS_URL = 'https://script.google.com/macros/s/AKfycbw7aUYrPpPVv3tMSzPYdyreardRMWrntQWaV6pPnNv7UazXJfcVhiMUvg4H4gGdxx7a-w/exec';
 
   await Promise.all([
-    fetch('/notify', {
+    fetch('https://gymfit-lp-production.up.railway.app/notify', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ body: cwBody }),
