@@ -513,7 +513,7 @@ document.getElementById('contact-form').addEventListener('submit', async functio
 
   // Chatwork通知（サーバー経由）
   const cwBody = [
-    '[info][title]パーソナルピラティスGYMFITにお問い合わせがありました[/title]',
+    '[info][title]' + f.name + ' 様からお問い合わせがありました[/title]',
     'お名前：'           + f.name,
     'メール：'           + f.email,
     '電話：'             + f.phone,
