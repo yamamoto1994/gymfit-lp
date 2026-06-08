@@ -552,7 +552,9 @@ document.getElementById('contact-form').addEventListener('submit', async functio
       body: fd,
     });
     gtag('event', 'form_submit', {form_name: 'contact'});
-    window.location.href = 'thanks.html';
+    var thanksUrl = 'thanks.html?em=' + encodeURIComponent(f.email);
+    if (f.phone !== '未入力') thanksUrl += '&ph=' + encodeURIComponent(f.phone);
+    window.location.href = thanksUrl;
   } catch (_) {
     btn.disabled = false;
     btn.textContent = '送信する';

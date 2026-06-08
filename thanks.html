@@ -10,13 +10,28 @@
 
   gtag('config', 'G-HXC8N9WLY9');
   gtag('config', 'AW-16720908788');
-</script>
-<!-- Event snippet for 体験レッスン申込み conversion -->
-<script>
+
+  // 拡張コンバージョン: フォームから渡されたユーザーデータをセット
+  (function() {
+    var params = new URLSearchParams(window.location.search);
+    var email = params.get('em');
+    var phone = params.get('ph');
+    var userData = {};
+    if (email) userData.email = email;
+    if (phone) {
+      // 日本の電話番号をE.164形式に変換（例: 090-1234-5678 → +819012345678）
+      var digits = phone.replace(/\D/g, '');
+      if (digits.charAt(0) === '0') digits = '81' + digits.slice(1);
+      userData.phone_number = '+' + digits;
+    }
+    if (email || phone) gtag('set', 'user_data', userData);
+  })();
+
+  // Event snippet for 体験レッスン申込み conversion
   gtag('event', 'conversion', {
-      'send_to': 'AW-16720908788/YA_CCJ_y97gcEPSjk6U-',
-      'value': 1.0,
-      'currency': 'JPY'
+    'send_to': 'AW-16720908788/YA_CCJ_y97gcEPSjk6U-',
+    'value': 1.0,
+    'currency': 'JPY'
   });
 </script>
 <meta charset="UTF-8">
